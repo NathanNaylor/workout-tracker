@@ -51,12 +51,26 @@ router.get("/api/workouts", (req, res) => {
 
 // Respond with json array containing the last 7 workouts
 router.get("/api/workouts/range", (req, res) => {
-  // CODE HERE
+  db.Workout.find()
+    .sort({ day: -1 })
+    .limit(7)
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // Delete workout with id matching id in the request body.
 router.delete("/api/workouts", (req, res) => {
-  // CODE HERE
+  db.Workout.deleteOne({ _id: req.body.id })
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
