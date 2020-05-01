@@ -1,51 +1,56 @@
-# Unit 17 Nosql Homework: Workout Tracker
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code and starting code for your server and api routes in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and add code to the api routes in order to make the app function correctly.
+# workout-tracker
 
-## User Story
 
-- As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+![License: None](https://img.shields.io/badge/License-None-blue.svg)
 
-## Business Context
+## Description
+This is an application designed to allow the user to list out their workouts for the day and view some charts displaying various data about their exercises.
 
-A consumer will reach their fitness goals quicker when they track their workout progress.
+## Table of Contents
 
-## Acceptance Criteria
+* [Installation](#installation)
 
-When the user loads the page, they should be given the option to create a new workout, or continue with their last workout.
+* [Usage](#usage)
 
-The user should be able to:
+* [License](#license)
 
-- Add exercises to a previous workout plan.
+* [Contributing](#contributing)
 
-- Add new exercises to a new workout plan.
+* [Tests](#tests)
 
-- View multiple the combined weight of multiple exercises on the `stats` page.
+* [Questions](#questions)
 
-## Commit Early and Often
+## Installation
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+Install required dependencies using the following command:
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
+```
+npm i
+```
 
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
+## Usage
 
-Follow these guidelines for committing:
+The repository can be run by using node server.js, or you can use the application live on [Heroku](https://protected-thicket-97678.herokuapp.com/)
 
-- Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
+## Licensing
 
-- Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
+None
 
-- Don't commit half done work, for the sake of your collaborators (and your future self!)
+## Contributing
 
-- Test your application before you commit to ensure functionality at every step in the development process
+In order to contribute please contact me using the info below.
 
-We would like you to have well over 200 commits by graduation, so commit early and often!
+## Testing
 
-## Submission on BCS
+To run tests, use the following command:
 
-You are required to submit the following:
+```
+N/A
+```
 
-- The URL to the deployed application
+## Questions
 
-- The URL to the Github repository
+<img src="https://avatars3.githubusercontent.com/u/61394430?v=4" alt="GitHub User Icon" style="border-radius: 30px" width="50">  
+
+If you have questions about the repo, open an issue or contact [NathanNaylor](https://github.com/NathanNaylor) directly at nathannaylors@gmail.com.
