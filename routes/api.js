@@ -7,11 +7,13 @@ const db = require("../models");
 
 // Creates a workout using data in the request body.
 router.post("/api/workouts", (req, res) => {
-  db.Workout.create(req.body).then((data) => {
-    res.json(data);
-  }).catch((err) => {
-    res.status(400).json(err);
-  })
+  db.Workout.create(req.body)
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
 });
 
 // Respond with workout for id url parameter. This should
@@ -20,11 +22,11 @@ router.put("/api/workouts/:id", (req, res) => {
   db.Workout.findByIdAndUpdate(
     req.params.id,
     {
-      $push: { exercises: req.body }
+      $push: { exercises: req.body },
     },
     {
       runValidators: true,
-      new: true
+      new: true,
     }
   )
     .then((data) => {
@@ -39,7 +41,7 @@ router.put("/api/workouts/:id", (req, res) => {
 router.get("/api/workouts", (req, res) => {
   db.Workout.find()
     .then((data) => {
-      console.log(data)
+      console.log(data);
       res.json(data);
     })
     .catch((err) => {
