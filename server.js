@@ -1,7 +1,7 @@
 const express = require("express");
 const logger = require("morgan");
 
-// TODO: import mongoose
+// import mongoose
 const mongoose = require("mongoose");
 
 const apiRoutes = require("./routes/api");
@@ -16,9 +16,9 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("public", { "extensions": "html" }));
+app.use(express.static("public", { extensions: "html" }));
 
-// TODO: create mongodb connection with mongoose
+//create mongodb connection with mongoose
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
