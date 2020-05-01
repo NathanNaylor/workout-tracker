@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const db = require("../models");
 
 // TODO: import required model/s
 
@@ -6,18 +7,44 @@ const router = require("express").Router();
 
 // Creates a workout using data in the request body.
 router.post("/api/workouts", (req, res) => {
-  // CODE HERE
+  db.Workout.create(req.body).then((data) => {
+    res.json(data);
+  }).catch((err) => {
+    res.status(400).json(err);
+  })
 });
 
 // Respond with workout for id url parameter. This should
 // respond with the updated workout json
 router.put("/api/workouts/:id", (req, res) => {
-  // CODE HERE
+  db.Workout.findByIdAndUpdate(
+    req.params.id,
+    {
+      $push: { exercises: req.body }
+    },
+    {
+      runValidators: true,
+      new: true
+    }
+  )
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // Respond with json for all the workouts in an array.
 router.get("/api/workouts", (req, res) => {
-  // CODE HERE
+  db.Workout.find()
+    .then((data) => {
+      console.log(data)
+      res.json(data);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // Respond with json array containing the last 7 workouts
