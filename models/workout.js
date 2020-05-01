@@ -28,6 +28,7 @@ const WorkoutSchema = new Schema({
       distance: Number,
     },
   ],
+  totalDuration: Number
 });
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
